@@ -1,0 +1,89 @@
+%%
+% BIThesis 研究生学位论文模板 The BIThesis Template for Graduate Thesis
+% This file has no copyright assigned and is placed in the Public Domain.
+%%
+
+
+@misc{ArceOS,
+  author       = {贾越凯},
+  howpublished = {\url{https://github.com/arceos-org/arceos}},
+  title        = {ArceOS},
+  year         = {2024}
+}
+
+@misc{StarryOS,
+  author       = {郑友捷},
+  howpublished = {\url{https://github.com/Starry-OS/StarryOS}},
+  title        = {StarryOS},
+  year         = {2026}
+}
+
+@article{10.1145/173668.168633,
+  author     = {Liedtke, Jochen},
+  title      = {Improving IPC by kernel design},
+  year       = {1993},
+  issue_date = {Dec. 1993},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {27},
+  number     = {5},
+  issn       = {0163-5980},
+  url        = {https://doi.org/10.1145/173668.168633},
+  doi        = {10.1145/173668.168633},
+  abstract   = {Inter-process communication (ipc) has to be fast and effective, otherwise programmers will not use remote procedure calls (RPC), multithreading and multitasking adequately. Thus ipc performance is vital for modern operating systems, especially μ-kernel based ones. Surprisingly, most μ-kernels exhibit poor ipc performance, typically requiring 100 μs for a short message transfer on a modern processor, running with 50 MHz clock rate.In contrast, we achieve 5 μs; a twentyfold improvement.This paper describes the methods and principles used, starting from the architectural design and going down to the coding level. There is no single trick to obtaining this high performance; rather, a synergetic approach in design and implementation on all levels is needed. The methods and their synergy are illustrated by applying them to a concrete example, the L3 μ-kernel (an industrial-quality operating system in daily use at several hundred sites). The main ideas are to guide the complete kernel design by the ipc requirements, and to make heavy use of the concept of virtual address space inside the μ-kernel itself.As the L3 experiment shows, significant performance gains are possible: compared with Mach, they range from a factor of 22 (8-byte messages) to 3 (4-Kbyte messages). Although hardware specific details influence both the design and implementation, these techniques are applicable to the whole class of conventional general purpose von Neumann processors supporting virtual addresses. Furthermore, the effort required is reasonably small, for example the dedicated parts of the μ-kernel can be concentrated in a single medium sized module.},
+  journal    = {SIGOPS Oper. Syst. Rev.},
+  month      = dec,
+  pages      = {175–188},
+  numpages   = {14}
+}
+
+
+@inproceedings{Improving_IPC_by_kernel_design,
+  author    = {Liedtke, Jochen},
+  title     = {Improving IPC by kernel design},
+  year      = {1993},
+  isbn      = {0897916328},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/168619.168633},
+  doi       = {10.1145/168619.168633},
+  abstract  = {Inter-process communication (ipc) has to be fast and effective, otherwise programmers will not use remote procedure calls (RPC), multithreading and multitasking adequately. Thus ipc performance is vital for modern operating systems, especially μ-kernel based ones. Surprisingly, most μ-kernels exhibit poor ipc performance, typically requiring 100 μs for a short message transfer on a modern processor, running with 50 MHz clock rate.In contrast, we achieve 5 μs; a twentyfold improvement.This paper describes the methods and principles used, starting from the architectural design and going down to the coding level. There is no single trick to obtaining this high performance; rather, a synergetic approach in design and implementation on all levels is needed. The methods and their synergy are illustrated by applying them to a concrete example, the L3 μ-kernel (an industrial-quality operating system in daily use at several hundred sites). The main ideas are to guide the complete kernel design by the ipc requirements, and to make heavy use of the concept of virtual address space inside the μ-kernel itself.As the L3 experiment shows, significant performance gains are possible: compared with Mach, they range from a factor of 22 (8-byte messages) to 3 (4-Kbyte messages). Although hardware specific details influence both the design and implementation, these techniques are applicable to the whole class of conventional general purpose von Neumann processors supporting virtual addresses. Furthermore, the effort required is reasonably small, for example the dedicated parts of the μ-kernel can be concentrated in a single medium sized module.},
+  booktitle = {Proceedings of the Fourteenth ACM Symposium on Operating Systems Principles},
+  pages     = {175–188},
+  numpages  = {14},
+  location  = {Asheville, North Carolina, USA},
+  series    = {SOSP '93}
+}
+
+@inproceedings{HarmonyOS,
+  author    = {Chen, Haibo and Miao, Xie and Jia, Ning and Wang, Nan and Li, Yu and Liu, Nian and Liu, Yutao and Wang, Fei and Huang, Qiang and Li, Kun and Yang, Hongyang and Wang, Hui and Yin, Jie and Peng, Yu and Xu, Fengwei},
+  title     = {Microkernel goes general: performance and compatibility in the HongMeng production microkernel},
+  year      = {2024},
+  isbn      = {978-1-939133-40-3},
+  publisher = {USENIX Association},
+  address   = {USA},
+  abstract  = {The virtues of security, reliability, and extensibility have made state-of-the-art microkernels prevalent in embedded and safety-critical scenarios. However, they face performance and compatibility issues when targeting more general scenarios, such as smartphones and smart vehicles.This paper presents the design and implementation of Hong-Meng kernel (HM), a commercialized general-purpose microkernel that preserves most of the virtues of microkernels while addressing the above challenges. For the sake of commercial practicality, we design HM to be compatible with the Linux API and ABI to reuse its rich applications and driver ecosystems. To make it performant despite the constraints of compatibility and being general-purpose, we reexamine the traditional microkernel wisdom, including IPC, capability-based access control, and userspace paging, and retrofit them accordingly. Specifically, we argue that per-invocation IPC is not the only concern for performance, but IPC frequency, state double bookkeeping among OS services, and capabilities that hide kernel objects contribute to significant performance degradation. We mitigate them accordingly with a set of techniques, including differentiated isolation classes, flexible composition, policy-free kernel paging, and address-token-based access control.HM consists of a minimal core kernel and a set of least-privileged OS services, and it can run complex frameworks like AOSP and OpenHarmony. HM has been deployed in production on tens of millions of devices in emerging scenarios, including smart routers, smart vehicles and smartphones, typically with improved performance and security over their Linux counterparts.},
+  booktitle = {Proceedings of the 18th USENIX Conference on Operating Systems Design and Implementation},
+  articleno = {25},
+  numpages  = {21},
+  location  = {Santa Clara, CA, USA},
+  series    = {OSDI'24}
+}
+
+@article{seL4,
+  author     = {Klein, Gerwin and Andronick, June and Elphinstone, Kevin and Heiser, Gernot and Cock, David and Derrin, Philip and Elkaduwe, Dhammika and Engelhardt, Kai and Kolanski, Rafal and Norrish, Michael and Sewell, Thomas and Tuch, Harvey and Winwood, Simon},
+  title      = {seL4: formal verification of an operating-system kernel},
+  year       = {2010},
+  issue_date = {June 2010},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {53},
+  number     = {6},
+  issn       = {0001-0782},
+  url        = {https://doi.org/10.1145/1743546.1743574},
+  doi        = {10.1145/1743546.1743574},
+  journal    = {Commun. ACM},
+  month      = jun,
+  pages      = {107–115},
+  numpages   = {9}
+}
