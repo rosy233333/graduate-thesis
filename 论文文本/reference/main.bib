@@ -87,3 +87,190 @@
   pages      = {107–115},
   numpages   = {9}
 }
+
+@inproceedings{FlexSC,
+  author    = {Livio Soares and Michael Stumm},
+  title     = {{FlexSC}: Flexible System Call Scheduling with {Exception-Less} System Calls},
+  booktitle = {9th USENIX Symposium on Operating Systems Design and Implementation (OSDI 10)},
+  year      = {2010},
+  address   = {Vancouver, BC},
+  url       = {https://www.usenix.org/conference/osdi10/flexsc-flexible-system-call-scheduling-exception-less-system-calls},
+  publisher = {USENIX Association},
+  month     = oct
+}
+
+@inproceedings{SPDK+,
+  author    = {Li, Endian and Yi, Shushu and Peng, Li and Li, Qiao and Zhou, Diyu and Wang, Zhenlin and Wang, Xiaolin and Mao, Bo and Luo, Yingwei and Zhou, Ke and Zhang, Jie},
+  title     = {SPDK+: Low Latency or High Power Efficiency? We Take Both},
+  year      = {2025},
+  isbn      = {9798400719479},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3736548.3737824},
+  doi       = {10.1145/3736548.3737824},
+  abstract  = {SPDK, as one of the most efficient I/O storage software, is capable of delivering the lowest I/O latency. Unfortunately, the polling mechanism in SPDK wastes tremendous CPU clock cycles, especially under small I/O operations and low queue depths. Although SPDK supports the conventional interrupt method, it does not improve power efficiency under such circumstances. To address this issue, we propose SPDK+, which enables the user interrupt feature in the SPDK to achieve both low latency and high power efficiency. Specifically, SPDK+ employs user interrupt handling to directly process MSI-X interrupts from SSD devices and utilizes user wait instructions during IO wait periods to conserve power. The comprehensive evaluation results show that SPDK+ achieves up to 49.5\% power efficiency improvement while keeping the I/O latency almost unchanged compared with SPDK.},
+  booktitle = {Proceedings of the 17th ACM Workshop on Hot Topics in Storage and File Systems},
+  pages     = {17–23},
+  numpages  = {7},
+  keywords  = {Interrupt, Polling, Power Efficiency, SPDK},
+  location  = {Boston, MA, USA},
+  series    = {HotStorage '25}
+}
+
+@inproceedings{Pegasus,
+  author    = {Peng, Dinglan and Liu, Congyu and Palit, Tapti and Vahldiek-Oberwagner, Anjo and Vij, Mona and Fonseca, Pedro},
+  title     = {Pegasus: Transparent and Unified Kernel-Bypass Networking for Fast Local and Remote Communication},
+  year      = {2025},
+  isbn      = {9798400711961},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3689031.3696083},
+  doi       = {10.1145/3689031.3696083},
+  abstract  = {Modern software architectures in cloud computing are highly reliant on interconnected local and remote services. Popular architectures, such as the service mesh, rely on the use of independent services or sidecars for a single application. While such modular approaches simplify application development and deployment, they also introduce significant communication overhead since now even local communication that is handled by the kernel becomes a performance bottleneck. This problem has been identified and partially solved for remote communication over fast NICs through the use of kernel-bypass data plane systems. However, existing kernel-bypass mechanisms challenge their practical deployment by either requiring code modification or supporting only a small subset of the network interface.In this paper, we propose Pegasus, a framework for transparent kernel bypass for local and remote communication. By transparently fusing multiple applications into a single process, Pegasus provides an in-process fast path to bypass the kernel for local communication. To accelerate remote communication over fast NICs, Pegasus uses DPDK to directly access the NIC. Pegasus supports transparent kernel bypass for unmodified binaries by implementing core OS services in user space, such as scheduling and memory management, thus removing the kernel from the critical path. Our experiments on a range of real-world applications show that, compared with Linux, Pegasus improves the throughput by 19\% to 33\% for local communication and 178\% to 442\% for remote communication, without application changes. Furthermore, Pegasus achieves 222\% higher throughput than Linux for co-located, IO-intensive applications that require both local and remote communication, with each communication optimization contributing significantly.},
+  booktitle = {Proceedings of the Twentieth European Conference on Computer Systems},
+  pages     = {360–378},
+  numpages  = {19},
+  keywords  = {kernel-bypass networking, operating systems},
+  location  = {Rotterdam, Netherlands},
+  series    = {EuroSys '25}
+}
+
+@inproceedings{Umbra,
+  author    = {Leonard von Merzljak and
+               Philipp Fent and
+               Thomas Neumann and
+               Jana Giceva},
+  editor    = {Rajesh Bordawekar and
+               Tirthankar Lahiri},
+  title     = {What Are You Waiting For? Use Coroutines for Asynchronous {I/O} to
+               Hide {I/O} Latencies and Maximize the Read Bandwidth!},
+  booktitle = {International Workshop on Accelerating Analytics and Data Management
+               Systems Using Modern Processor and Storage Architectures, ADMS@VLDB
+               2022, Sydney, Australia, September 5, 2022},
+  pages     = {36--46},
+  year      = {2022},
+  url       = {http://www.adms-conf.org/2022-camera-ready/ADMS22\_merzljak.pdf},
+  timestamp = {Thu, 27 Jul 2023 13:27:14 +0200},
+  biburl    = {https://dblp.org/rec/conf/adms/MerzljakF0G22.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{Demikernel,
+  author    = {Zhang, Irene and Raybuck, Amanda and Patel, Pratyush and Olynyk, Kirk and Nelson, Jacob and Leija, Omar S. Navarro and Martinez, Ashlie and Liu, Jing and Simpson, Anna Kornfeld and Jayakar, Sujay and Penna, Pedro Henrique and Demoulin, Max and Choudhury, Piali and Badam, Anirudh},
+  title     = {The Demikernel Datapath OS Architecture for Microsecond-scale Datacenter Systems},
+  year      = {2021},
+  isbn      = {9781450387095},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3477132.3483569},
+  doi       = {10.1145/3477132.3483569},
+  abstract  = {Datacenter systems and I/O devices now run at single-digit microsecond latencies, requiring ns-scale operating systems. Traditional kernel-based operating systems impose an unaffordable overhead, so recent kernel-bypass OSes [73] and libraries [23] eliminate the OS kernel from the I/O datapath. However, none of these systems offer a general-purpose datapath OS replacement that meet the needs of μs-scale systems.' AB@This paper proposes Demikernel, a flexible datapath OS and architecture designed for heterogenous kernel-bypass devices and μs-scale datacenter systems. We build two prototype Demikernel OSes and show that minimal effort is needed to port existing μs-scale systems. Once ported, Demikernel lets applications run across heterogenous kernel-bypass devices with ns-scale overheads and no code changes.},
+  booktitle = {Proceedings of the ACM SIGOPS 28th Symposium on Operating Systems Principles},
+  pages     = {195–211},
+  numpages  = {17},
+  keywords  = {operating system, kernel bypass, datacenters},
+  location  = {Virtual Event, Germany},
+  series    = {SOSP '21}
+}
+
+@misc{zCore,
+  author       = {王润基},
+  howpublished = {\url{https://github.com/rcore-os/zCore}},
+  title        = {zCore},
+  year         = {2026}
+}
+
+@inproceedings{Concord,
+  author    = {Iyer, Rishabh and Unal, Musa and Kogias, Marios and Candea, George},
+  title     = {Achieving Microsecond-Scale Tail Latency Efficiently with Approximate Optimal Scheduling},
+  year      = {2023},
+  isbn      = {9798400702297},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3600006.3613136},
+  doi       = {10.1145/3600006.3613136},
+  abstract  = {Datacenter applications expect microsecond-scale service times and tightly bound tail latency, with future workloads expected to be even more demanding. To address this challenge, state-of-the-art runtimes employ theoretically optimal scheduling policies, namely a single request queue and strict preemption.We present Concord, a runtime that demonstrates how forgoing this design---while still closely approximating it---enables a significant improvement in application throughput while maintaining tight tail-latency SLOs. We evaluate Concord on microbenchmarks and Google's LevelDB key-value store; compared to the state of the art, Concord improves application throughput by up to 52\% on microbenchmarks and by up to 83\% on LevelDB, while meeting the same tail-latency SLOs. Unlike the state of the art, Concord is application agnostic and does not rely on the nonstandard use of hardware, which makes it immediately de-ployable in the public cloud. Concord is publicly available at https://dslab.epfl.ch/research/concord.},
+  booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
+  pages     = {466–481},
+  numpages  = {16},
+  location  = {Koblenz, Germany},
+  series    = {SOSP '23}
+}
+
+@mastersthesis{TAIC,
+  author  = {赵方亮},
+  title   = {基于软硬协同的任务调度和中断响应研究},
+  school  = {清华大学},
+  year    = {2025},
+  address = {北京},
+  month   = {5}
+}
+
+@misc{embassy_preempt,
+  author       = {杨长轲},
+  howpublished = {\url{https://github.com/yangck125/embassy_preempt/blob/main/src/docs/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A.md}},
+  title        = {embassy_preempt技术报告},
+  year         = {2024}
+}
+
+@inproceedings{Thread-Per-Core,
+  author    = {Enberg, Pekka and Rao, Ashwin and Tarkoma, Sasu},
+  booktitle = {2019 ACM/IEEE Symposium on Architectures for Networking and Communications Systems (ANCS)},
+  title     = {The Impact of Thread-Per-Core Architecture on Application Tail Latency},
+  year      = {2019},
+  volume    = {},
+  number    = {},
+  pages     = {1-8},
+  keywords  = {Communication systems;Linux;Telecommunication traffic;Hardware;Time factors;Synchronization;Communication switching;Message systems;Tail latency;Thread-per-core;IRQ affinity;irqbalance;Stores},
+  doi       = {10.1109/ANCS.2019.8901874}
+}
+
+@inproceedings{ghOSt,
+  author    = {Humphries, Jack Tigar and Natu, Neel and Chaugule, Ashwin and Weisse, Ofir and Rhoden, Barret and Don, Josh and Rizzo, Luigi and Rombakh, Oleg and Turner, Paul and Kozyrakis, Christos},
+  title     = {ghOSt: Fast \& Flexible User-Space Delegation of Linux Scheduling},
+  year      = {2021},
+  isbn      = {9781450387095},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3477132.3483542},
+  doi       = {10.1145/3477132.3483542},
+  abstract  = {We present ghOSt, our infrastructure for delegating kernel scheduling decisions to userspace code. ghOSt is designed to support the rapidly evolving needs of our data center workloads and platforms.Improving scheduling decisions can drastically improve the throughput, tail latency, scalability, and security of important workloads. However, kernel schedulers are difficult to implement, test, and deploy efficiently across a large fleet. Recent research suggests bespoke scheduling policies, within custom data plane operating systems, can provide compelling performance results in a data center setting. However, these gains have proved difficult to realize as it is impractical to deploy a custom OS image(s) at an application granularity, particularly in a multi-tenant environment, limiting the practical applications of these new techniques.ghOSt provides general-purpose delegation of scheduling policies to userspace processes in a Linux environment. ghOSt provides state encapsulation, communication, and action mechanisms that allow complex expression of scheduling policies within a userspace agent, while assisting in synchronization. Programmers use any language to develop and optimize policies, which are modified without a host reboot. ghOSt supports a wide range of scheduling models, from per-CPU to centralized, run-to-completion to preemptive, and incurs low overheads for scheduling actions. We demonstrate ghOSt's performance on both academic and real-world workloads, including Google Snap and Google Search. We show that by using ghOSt instead of the kernel scheduler, we can quickly achieve comparable throughput and latency while enabling policy optimization, non-disruptive upgrades, and fault isolation for our data center workloads. We open-source our implementation to enable future research and development based on ghOSt.},
+  booktitle = {Proceedings of the ACM SIGOPS 28th Symposium on Operating Systems Principles},
+  pages     = {588–604},
+  numpages  = {17},
+  keywords  = {Operating systems, thread scheduling},
+  location  = {Virtual Event, Germany},
+  series    = {SOSP '21}
+}
+
+@inproceedings{Skyloft,
+  author    = {Jia, Yuekai and Tian, Kaifu and You, Yuyang and Chen, Yu and Chen, Kang},
+  title     = {Skyloft: A General High-Efficient Scheduling Framework in User Space},
+  year      = {2024},
+  isbn      = {9798400712517},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3694715.3695973},
+  doi       = {10.1145/3694715.3695973},
+  abstract  = {Skyloft is a general and highly efficient user-space scheduling framework. It leverages user-mode interrupt to deliver and process hardware timers directly in user space. This capability enables Skyloft to achieve μs-scale preemption. Skyloft offers a set of scheduling interfaces that supports different scheduling policies, including both preemptive and nonpreemptive ones. Operating as a user-space scheduling framework, Skyloft is compatible with Linux and integrates seamlessly with high-performance I/O frameworks like DPDK.Evaluation results show that optimizations in per-CPU scheduling with user-space timer interrupts allow Skyloft's Completely Fair Scheduler (CFS) and Round Robin (RR) to significantly reduce wake-up latency compared to their Linux counterparts (100μs vs. 10000μs). In comparison to the general scheduling framework ghOSt, Skyloft achieves a 1.2{\texttimes} increase in maximum throughput for Latency Critical (LC) applications. Additionally, unlike the specialized scheduling framework Shinjuku, Skyloft not only supports LC applications but also efficiently allocates CPU resources to Best Effort (BE) applications under low load conditions. By incorporating a 5μs preemption mechanism into the Work-Stealing strategy, a RocksDB Server running on Skyloft exhibits a performance improvement of 1.9{\texttimes} compared to Shenango.},
+  booktitle = {Proceedings of the ACM SIGOPS 30th Symposium on Operating Systems Principles},
+  pages     = {265–279},
+  numpages  = {15},
+  keywords  = {operating systems, scheduling, user interrupts},
+  location  = {Austin, TX, USA},
+  series    = {SOSP '24}
+}
+
+@misc{tornado-os,
+  author       = {蒋周奇, 车春池},
+  howpublished = {\url{https://github.com/HUST-OS/tornado-os/tree/main}},
+  title        = {tornado-os},
+  year         = {2021}
+}
+
+@misc{fast-trap,
+  author       = {杨德睿},
+  howpublished = {\url{https://github.com/rustsbi/fast-trap}},
+  title        = {fast-trap},
+  year         = {2023}
+}
